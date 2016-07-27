@@ -2,8 +2,19 @@
 <phpunit bootstrap="./test/bootstrap.php"
     colors="true">
     <testsuites>
-        <testsuite name="PDX">
+        <testsuite name="pdx">
             <directory>test</directory>
         </testsuite>
     </testsuites>
+    <filter>
+      <whitelist processUncoveredFilesFromWhitelist="true">
+        <directory suffix=".php">src/</directory>
+        <exclude>
+          <file>src/index.php</file>
+        </exclude>
+      </whitelist>
+    </filter>
+    <logging>
+      <log type="coverage-clover" target="clover.xml"/>
+    </logging>
 </phpunit>
