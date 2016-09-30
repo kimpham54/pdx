@@ -1,3 +1,5 @@
+# version 8.1.0
+
 # ![PDX](https://cloud.githubusercontent.com/assets/2371345/15409611/e5906042-1deb-11e6-9a72-e5186f7c033d.png) PDX
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/Islandora/PDX.svg?style=flat-square)](https://packagist.org/packages/islandora/PDX)
@@ -24,7 +26,7 @@ This is a top level container for the various PCDM related Islandora CLAW micros
 
 You will need to copy the configuration file [_example.settings.yml_](config/example.settings.yml) to either **settings.yml** or **settings.dev.yml** (if $app['debug'] = TRUE) and change any required settings.
 
-You can run just this service using PHP by executing 
+You can run just this service using PHP by executing
 
 ```
 php -S localhost:<some port> -t src/ src/index.php
@@ -33,7 +35,7 @@ from this directory to start it running.
 
 ## Services
 
-This mounts all the various individual microservices under the `/islandora` URL, so you currently have access to 
+This mounts all the various individual microservices under the `/islandora` URL, so you currently have access to
 
 * CollectionService at `/islandora/collection`
 
@@ -45,7 +47,7 @@ This an Islandora PHP Microservice to create PCDM:Collections and add/remove PCD
 
 #### Services
 
-The CollectionService provides the following endpoints for HTTP requests. 
+The CollectionService provides the following endpoints for HTTP requests.
 
 **Note**: The UUID is of the form `18c67794-366c-a6d9-af13-b3464a1fb9b5`
 
@@ -56,11 +58,11 @@ The CollectionService provides the following endpoints for HTTP requests.
 2. POST to `/collection/{uuid}`
 
     for creating a new PCDM:Collection as a child of resource {uuid}
-    
+
 2. POST to `/collection/{uuid}/member/{member}`
 
     for adding the resource identifier by the UUID {member} to the collection identified by the UUID {uuid}
-    
+
 2. DELETE to `/collection/{uuid}/member/{member}`
 
     for removing the resource identifier by the UUID {member} from the collection identified by the UUID {uuid}
